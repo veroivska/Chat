@@ -1,0 +1,40 @@
+<header class="header">
+  <div class="wrapper__avatar">
+    <div class="avatar">
+      <img class="avatar__img" src="http://surl.li/cttke" alt="Avatar img">
+    </div>
+    <img class="online-icon" src="/assets/images/ок.png" alt="Online-icon">
+  </div>
+  <input class="header__search"
+         #element
+         (keydown.enter)="search(element.value)"
+         type="text"
+         placeholder="Search or start new chat">
+</header>
+<div class="chats">
+  <div class="chats__title">
+    Chats
+  </div>
+  <div *ngFor="let contact of contacts$ | async">
+    <div class="contact" [routerLink]="['chat', contact.id]">
+      <div class="wrapper__avatar">
+        <div class="avatar">
+          <img class="avatar__img" [src]='contact.img' alt="Avatar img">
+        </div>
+        <img class="online-icon" src="/assets/images/ок.png" alt="Online-icon">
+      </div>
+      <div class="contact__desc">
+        <div class="contact__name">
+          {{contact.username}}
+        </div>
+        <div class="contact__last-message">
+          {{contact.lastMessage}}
+        </div>
+      </div>
+      <div class="contact__last-activity">
+        {{contact.lastMessageDate | date }}
+      </div>
+    </div>
+  </div>
+</div>
+

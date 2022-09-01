@@ -1,0 +1,111 @@
+.header{
+  display: flex;
+  align-items: center;
+  background: var(--extra-bg-color);
+  padding: 0.85rem 2em;
+  border-bottom: 1px solid #dedcdc;
+  &__name{
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+}
+
+.avatar{
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  overflow: hidden;
+  &__img {
+    width: 55px;
+    object-fit: cover;
+  }
+}
+.wrapper__avatar{
+  display: inline-block;
+  position: relative;
+  margin-right: 1rem;
+  .online-icon{
+    position: absolute;
+    bottom: -0.2rem;
+    right: -0.3rem;
+    z-index: 100;
+  }
+}
+
+.massage-section{
+  padding-top: 1rem;
+  flex: 1 1 auto;
+  height: 90vh;
+  overflow-y: auto;
+}
+
+.message{
+  display: inline-block;
+  position: relative;
+  border-radius: 2rem;
+  padding: 1rem;
+  max-width: 60%;
+  span{
+    max-width: 60%;
+  }
+  &__for{
+    background-color: rgba(164, 164, 164, 0.55);
+  }
+  &__from{
+    background-color: #232323;
+    color: white;
+  }
+  &__wrapper{
+    display: flex;
+    margin: 0 0.5rem 2rem 0.5rem;
+  }
+  &__wrapper-for{
+    justify-content: end;
+  }
+  &__avatar{
+    margin-right: 0.5rem;
+  }
+  &__time{
+    position: absolute;
+    bottom: -1.5rem;
+    color: rgba(68, 68, 68, 0.5);
+    font-size: 0.8rem;
+    min-width: max-content;
+  }
+}
+
+.message__time-for{
+  right: 1rem;
+}
+.message__time-from{
+  left: 1rem;
+}
+
+.footer{
+  background: var(--extra-bg-color);
+  padding: 1rem 2em;
+  border-top: 1px solid #dedcdc;
+  position: relative;
+  &__input{
+    width: 100%;
+    border-radius: 1.3rem;
+    height: 3rem;
+    border: 1px solid lightgray;
+    padding-left: 1rem;
+    font-family: inherit;
+    padding-right: 3.1rem;
+  }
+  &__btn{
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    right: 3rem;
+    bottom: 1.55rem;
+    cursor: pointer;
+    img{
+      width: 24px;
+      opacity: 0.5;
+    }
+  }
+}
+

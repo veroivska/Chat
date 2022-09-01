@@ -1,0 +1,37 @@
+<div class="header">
+  <div class="wrapper__avatar">
+    <div class="avatar">
+      <img class="avatar__img" [src]="currentContact.img" alt="Avatar img">
+    </div>
+  </div>
+  <div class="header__name">
+    {{currentContact.username}}
+  </div>
+</div>
+<div class="massage-section">
+  <div class="message__wrapper" *ngFor="let message of currentMessageHistory"
+       [ngClass]="message.messageType === messageType.Dispatched ? 'message__wrapper-for':'message__wrapper-from'">
+    <div class="avatar message__avatar" *ngIf="message.messageType === messageType.Received">
+      <img class="avatar__img" [src]="currentContact.img" alt="Avatar img">
+    </div>
+    <div class="message" [ngClass]="message.messageType === messageType.Dispatched ? 'message__for':'message__from'">
+      <span>{{message.text}}</span>
+      <div class="message__time"
+           [ngClass]="message.messageType === messageType.Dispatched ? 'message__time-for':'message__time-from'">
+        {{message.date | date: "MM/dd/yy, h:mm a"}}
+      </div>
+    </div>
+  </div>
+</div>
+<div class="footer">
+  <input class="footer__input"
+         type="text"
+         placeholder="Type your message"
+         #element
+         (keydown.enter)="sendMessage(element)">
+  <button class="footer__btn"
+    (click)="sendMessage(element)">
+    <img src="../../assets/images/send_outline_icon_139215.png" alt="Send">
+  </button>
+</div>
+

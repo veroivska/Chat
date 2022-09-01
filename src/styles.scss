@@ -1,0 +1,60 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
+:root {
+  --main-bg-color: #fff;
+  --extra-bg-color: rgba(222, 220, 220, 0.4);
+  --title-text-color: #00b2ff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+input:focus {
+  outline: none;
+}
+
+body {
+  font-family: 'Mulish', sans-serif;
+  color: #444444;
+  overflow-y: hidden;
+}
+
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(164, 164, 164, 0.2);
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: rgba(164, 164, 164, 0.2);
+  border: 1px solid rgba(75, 75, 75, 0.35);
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background:#232323;
+}
+
+app-chat{
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.chats{
+  overflow-y: auto;
+  scroll-snap-align: start;
+}
+
+
